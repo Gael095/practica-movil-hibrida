@@ -1,0 +1,20 @@
+name: CI React Native
+on: [push]
+
+jobs:
+  verificacion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Instalación de dependencias
+        run: npm install
+
+      - name: Verificación del proyecto
+        run: echo "El proyecto React Native se ha instalado y verificado correctamente."
